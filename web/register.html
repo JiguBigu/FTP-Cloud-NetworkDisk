@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- meta -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit">
+<meta property="qc:admins" content="23635710066417756375" />
+<meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width"/>
+<title>注册</title>
+	<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/html5shiv/r29/html5.js"></script>
+
+	<script type="text/javascript" src="js/register.js"></script>
+	<link type="text/css" href="css/verification.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/dmaku.css" />
+</head>
+
+<body>
+	<input type="hidden" value = "false" id = "isVisiable_request_form_verifyCode" />
+	<input type="hidden" value = "true" id = "is_must_show_verify_code" />
+
+	<section id="main">
+		<h1>注册网盘帐号</h1>
+		<form action="javascript:;" accept-charset="utf-8" data-view="phoneRegister">
+
+			<div class="clearfix" data-propertyname="password" data-controltype="Username">
+				<input type="text" id="username"  name="username" placeholder="请输入用户名" data-required="required" autocomplete="off" >
+			</div>
+
+			<div class="clearfix" data-propertyname="password" data-controltype="Password">
+				<input type="password" id="password" name="password" placeholder="请输入密码" data-required="required" autocomplete="off" >
+			</div>
+
+			<div class="clearfix" data-propertyname="password" data-controltype="Password">
+				<input type="password" id="second_password" name="second_password" placeholder="请再次输入密码" data-required="required" autocomplete="off" >
+			</div>
+
+			<div class="verifyCodeInput clearfix"  data-propertyname="request_form_verifyCode" data-controltype="VerifyCode">
+				<div class="drag" >
+					<div class="bg"></div>
+					<div class="text" onselectstart="return false;">请拖动滑块解锁</div>
+					<div class="btn">&gt;&gt;</div>
+				</div>
+			</div>
+
+			<div class="clearfix btn_login" data-propertyname="submit" data-controltype="Botton">
+				<input onclick="register()" type="submit" value="注册">
+			</div>
+
+
+			<div class="clearfix goregister">
+				<span class="reg_now">已有网盘帐号？</span>
+				<a href="login.html">登录</a>
+			</div>
+
+		</form>
+	</section>
+
+	<!-- 页面主体END -->
+	
+	<footer id="footer">
+		<div>华中农业大学   &nbsp;&nbsp;<span>ftp实训小组：吕泽涛 尹嘉烨 肖中柱</span> </div>
+	<p>2019.7 </p>
+</footer><!-- jquery lib -->
+</body>
+<script src="js/verification.js"></script>
+</html>

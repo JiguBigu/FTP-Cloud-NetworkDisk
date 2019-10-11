@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/test.js"></script>
+</head>
+<style>
+    .ui_button {
+        padding:10px;
+        background: #01AAED;
+        color: #fff;
+    }
+    .ui_button:hover {
+        opacity: 0.9;
+    }
+</style>
+<body>
+<form>
+    <label class="ui_button" for="xFile">上传文件</label>
+    <input type="file" id="xFile" style="position:absolute;clip:rect(0 0 0 0);">
+    <span>文件以.video结尾</span>
+    <button type="button" onclick="getFilePath()">提交</button>
+</form>
+</body>
+</html>

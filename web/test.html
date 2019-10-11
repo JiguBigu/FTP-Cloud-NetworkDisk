@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进度条</title>
+    <style type="text/css">
+        progress{
+            width: 168px;
+            height: 10px;
+        }
+        progress::-webkit-progress-bar
+        {
+            background-color:#d7d7d7;
+        }
+        progress::-webkit-progress-value
+        {
+            background-color:orange;
+        }
+    </style>
+</head>
+<body>
+<h2>开始下载</h2>
+<progress value="0"  max="100">您的浏览器不支持progress元素</progress>
+
+<input type="button" value="开始" onclick="goprogress()"/>
+<p id="demo" style="display:none">已下载 0%</p>
+<script>
+    function goprogress(){
+            document.getElementById('demo').style.display='block';
+            var pro=document.getElementsByTagName("progress")[0];
+            gotoend(pro,0);
+        }
+        function gotoend(pro,value){
+            var value=value+1;
+            document.getElementById("demo").innerHTML = "已下载 "+value+"%"
+            pro.value=value;
+            if(value<100) {
+                setTimeout(function(){gotoend(pro, value);},20)
+            }else{
+                setTimeout(function(){alert("任务完成")},20);
+            }
+    }
+</script>
+
+</body>
+</html>
