@@ -57,7 +57,6 @@ public class Login extends HttpServlet {
 
 
         JSONArray data = JSONArray.fromObject(loginSuccess);
-        System.out.println(data.toString());
         PrintWriter out = response.getWriter();
         out.println(data);
         out.flush();

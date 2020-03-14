@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class BarThread extends Thread{
 
     private HttpServletResponse response;
-    private ArrayList<Long> bar = new ArrayList<Long>();
+    private ArrayList<Long> bar ;
     private int flag = 0;
     private boolean listen = true;
 

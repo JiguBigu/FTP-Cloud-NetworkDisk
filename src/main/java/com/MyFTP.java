@@ -496,7 +496,8 @@ public class MyFTP {
             }
 
             // 否则进行断点续传，并记录状态
-            ftpClient.setRestartOffset(localSize); // 该方法尝试把指针移动到远端文件的指定字节位置
+            // 该方法尝试把指针移动到远端文件的指定字节位置
+            ftpClient.setRestartOffset(localSize);
 
             InputStream in = ftpClient.retrieveFileStream(new String(remote
                     .getBytes("GBK"), "iso-8859-1"));
@@ -513,9 +514,6 @@ public class MyFTP {
                 long nowProcess = localSize / step;
                 if (nowProcess > process) {
                     process = nowProcess;
-                    if (process % 2 == 0)
-                        System.out.println("下载进度：" + process);
-                    // TODO更新文件下载进度,值存放在process变量中
                 }
             }
             // 下载完成关闭输入输出流对象
@@ -543,9 +541,6 @@ public class MyFTP {
                 long nowProcess = localSize / step;
                 if (nowProcess > process) {
                     process = nowProcess;
-                    if (process % 10 == 0)
-                        System.out.println("下载进度：" + process);
-                    // TODO更新文件下载进度,值存放在process变量中
                 }
             }
             in.close();

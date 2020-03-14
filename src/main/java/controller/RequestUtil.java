@@ -2,12 +2,10 @@ package controller;
 
 import controller.ParamDto;
 import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
 import java.util.List;
 
 /**
@@ -33,16 +31,14 @@ public class RequestUtil {
 
             //遍历表单的所有表单项（FileItem） 并对其进行相关操作
             for(FileItem fileItem : fileItemList) {
-//判断这个表单项如果是一个普通的表单项
+                //判断这个表单项如果是一个普通的表单项
                 if(fileItem.isFormField()) {
                     result.getParamMap().put(fileItem.getFieldName(),fileItem.getString("UTF-8"));
-//如果不是表单的普通文本域，就是
-                } else {
+                 //如果不是表单的普通文本域，就是
+                }else {
                     result.getFileMap().put(fileItem.getFieldName(),fileItem);
                 }
             }
-        } catch (FileUploadException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }

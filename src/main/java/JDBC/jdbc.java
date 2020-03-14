@@ -15,9 +15,9 @@ public class jdbc {
 	static Connection connection;
 	static final String ERRO_PASSWORD = "&";
 
-	public jdbc() throws SQLException {
+	public jdbc(){
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName(DRIVER);
 			System.out.println("Register driver success");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

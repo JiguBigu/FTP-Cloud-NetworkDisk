@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 import java.util.ArrayList;
 /**
  * @author Jigubigu
@@ -31,7 +30,6 @@ public class Check extends HttpServlet {
         ArrayList<Data> files = MyFTP.getFiles(path);
 
         JSONArray data = JSONArray.fromObject(files);
-        System.out.println(data.toString());
         PrintWriter out = response.getWriter();
         out.println(data);
         out.flush();

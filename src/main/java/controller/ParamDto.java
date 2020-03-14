@@ -16,8 +16,8 @@ public class ParamDto {
     private Map<String,FileItem> fileMap;
 
     public ParamDto() {
-        paramMap = new HashMap<String,String>();
-        fileMap = new HashMap<String, FileItem>();
+        paramMap = new HashMap<>();
+        fileMap = new HashMap<>();
     }
 
     public Map<String, String> getParamMap() {
